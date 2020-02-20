@@ -10,5 +10,6 @@ public class TextService {
 			 new Text2().m2();
 			 System.out.println("zhe wangsu   yundao ");
 			 System.out.println("这是E3 1230写的代码");
+			 System.out.println("我是分支2才有的代码");
 	}
 }
