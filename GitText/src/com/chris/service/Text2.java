@@ -5,6 +5,9 @@ public class Text2 {
 			return "我是M2";
 		}
 		public void m3() {
-			   System.out.println("我是e3 新增的方法");
+			   System.out.println("我是e3 新增的方法m3");
+		}
+		public void m4() {
+			   System.out.println("我是e3 新增的方法m4");
 		}
 }
