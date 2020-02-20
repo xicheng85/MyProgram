@@ -1,0 +1,35 @@
+Root WebApplicationContext: initialization started 
+Refreshing Root WebApplicationContext: startup date [Sat Feb 01 09:52:41 CST 2020]; root of context hierarchy 
+Loading XML bean definitions from class path resource [applicationContext.xml] 
+Loading properties file from class path resource [db.properties] 
+Loading properties file from class path resource [second.properties] 
+Loaded JDBC driver: com.mysql.jdbc.Driver 
+Root WebApplicationContext: initialization completed in 1281 ms 
+Root WebApplicationContext: initialization started 
+Refreshing Root WebApplicationContext: startup date [Sat Feb 01 10:00:57 CST 2020]; root of context hierarchy 
+Loading XML bean definitions from class path resource [applicationContext.xml] 
+Loading properties file from class path resource [db.properties] 
+Loading properties file from class path resource [second.properties] 
+Loaded JDBC driver: com.mysql.jdbc.Driver 
+Root WebApplicationContext: initialization completed in 1378 ms 
+Root WebApplicationContext: initialization started 
+Refreshing Root WebApplicationContext: startup date [Sat Feb 01 10:04:04 CST 2020]; root of context hierarchy 
+Loading XML bean definitions from class path resource [applicationContext.xml] 
+Loading properties file from class path resource [db.properties] 
+Loading properties file from class path resource [second.properties] 
+Loaded JDBC driver: com.mysql.jdbc.Driver 
+Root WebApplicationContext: initialization completed in 1449 ms 
+Root WebApplicationContext: initialization started 
+Refreshing Root WebApplicationContext: startup date [Sat Feb 01 10:05:27 CST 2020]; root of context hierarchy 
+Loading XML bean definitions from class path resource [applicationContext.xml] 
+Loading properties file from class path resource [db.properties] 
+Loading properties file from class path resource [second.properties] 
+Loaded JDBC driver: com.mysql.jdbc.Driver 
+Root WebApplicationContext: initialization completed in 1423 ms 
+Root WebApplicationContext: initialization started 
+Refreshing Root WebApplicationContext: startup date [Sat Feb 01 10:15:51 CST 2020]; root of context hierarchy 
+Loading XML bean definitions from class path resource [applicationContext.xml] 
+Loading properties file from class path resource [db.properties] 
+Loading properties file from class path resource [second.properties] 
+Loaded JDBC driver: com.mysql.jdbc.Driver 
+Root WebApplicationContext: initialization completed in 1414 ms 

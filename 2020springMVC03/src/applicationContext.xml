@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+         http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       <context:property-placeholder location="classpath:db.properties"/>
+        <bean id="datasoure" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${mysql.driver}"></property>
+		<property name="url" value="${mysql.url}"></property>
+		<property name="username" value="${mysql.username}"></property>
+		<property name="password" value="${mysql.pwd}"></property>
+        </bean>
+        <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="datasoure"></property>
+        </bean>
+        <bean id="MapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ynks.*"></property>
+        <property name="sqlSessionFactoryBeanName" value="factory"></property>
+        </bean>
+        <!-- 注意扫描范围过大会使得声明式事务无效  -->
+        <context:component-scan
+		base-package="com.ynks.service.impl"></context:component-scan>
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+	<bean id="trm"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="datasoure"></property>
+	</bean>
+	<!-- 配置声明式事务 -->
+	<tx:advice id="txAdvice"  transaction-manager="trm">
+		<!-- 配置哪些方法使用事务管理 -->
+		<tx:attributes>
+			<tx:method name="add*" />
+			<tx:method name="upd*" />
+			<tx:method name="del*" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut
+			expression="execution(* com.ynks.service.impl.*.*(..))" id="xipoint" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="xipoint" />
+	</aop:config>
+ </beans>
