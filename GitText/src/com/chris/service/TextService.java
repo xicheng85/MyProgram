@@ -9,5 +9,6 @@ public class TextService {
 			 System.out.println("测试输出更新");
 			 new Text2().m2();
 			 System.out.println("zhe wangsu   yundao ");
+			 System.out.println("这是E3 1230写的代码");
 	}
 }
