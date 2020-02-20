@@ -6,6 +6,7 @@ public class TextService {
 	}
 	
 	public static void main(String[] args) {
-			
+			 System.out.println("²âÊÔÊä³ö¸üĞÂ");
+			 new Text2().m2();
 	}
 }
